@@ -1,37 +1,46 @@
 {
-  "application": "dinghy",
-  "variables": {
-    "WaitTime1": 60,
-    "WaitTime2": 60,
-    "limit": 1
+  "application": "helloworldapp",
+  "globals": {
+    "save_app_on_update": true
+  },
+  "spec": {
+    "appmetadata": {
+      "dataSources": {
+        "enabled": [
+          "securityGroups",
+          "loadBalancers",
+          "executions",
+          "serverGroups"
+        ],
+        "disabled": [
+          "canaryConfigs"
+        ]
+      },
+      "cloudProviders": [
+        "kubernetes",
+        "aws"
+      ],
+      "customBanners": [
+        {
+          "backgroundColor": "var(--color-alert)",
+          "enabled": true,
+          "text": "Your custom banner text",
+          "textColor": "var(--color-text-on-dark)"
+        }
+      ]
+    }
   },
   "pipelines": [
     {
-      "application": "dinghy",
-      "keepWaitingPipelines": false,
-      "limitConcurrent": {{ variable limit }},
-      "name": "Simple",
+      "application": "helloworldapp",
+      "name": "my-pipeline-name",
       "stages": [
-        {{ module "./wait.stage.module"  {Name: "waitTime", Value: 10}  }}
-      ],
-      "triggers": []
-    },
-    {{ module "./simple.pipeline.module" }}
+        {
+          "name": "one",
+          "type": "wait",
+          "waitTime": 10
+        }
+      ]
+    }
   ]
 }
-
-
-type Variable struct {
-    Name string
-    Value interface{}
-}
-
-func module(name string, vars ...Variable) {
-
-}
-
-/*
-
-
-
-*/
