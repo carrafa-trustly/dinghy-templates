@@ -1,0 +1,19 @@
+{
+  "application": "app-version-2",
+  "globals": {
+    "save_app_on_update": true
+  },
+  "pipelines": [
+    {
+      "application": "app-version-2",
+      "name": "my-pipeline-name",
+      "stages": [
+        {
+          "name": "one",
+          "type": "wait",
+          "waitTime": 10
+        }
+      ]
+    }
+  ]
+}
