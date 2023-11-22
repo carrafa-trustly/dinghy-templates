@@ -1,5 +1,6 @@
 {
   "application": "app-version-2",
+  "deleteStalePipelines": true,
   "globals": {
     "save_app_on_update": true
   },
