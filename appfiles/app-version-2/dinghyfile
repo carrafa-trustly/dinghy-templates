@@ -14,6 +14,17 @@
           "waitTime": 10
         }
       ]
+    },
+    {
+      "application": "app-version-2",
+      "name": "my-pipeline-carrafa",
+      "stages": [
+        {
+          "name": "one",
+          "type": "wait",
+          "waitTime": 10
+        }
+      ]
     }
   ]
 }
