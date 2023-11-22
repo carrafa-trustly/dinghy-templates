@@ -6,7 +6,7 @@
   "pipelines": [
     {
       "application": "app-version-2",
-      "name": "my-pipeline-name",
+      "name": "my-pipeline-teste",
       "stages": [
         {
           "name": "one",
