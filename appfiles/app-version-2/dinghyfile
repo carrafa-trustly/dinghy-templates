@@ -1,12 +1,24 @@
 {
   "application": "app-version-2",
+  "deleteStalePipelines": true,
   "globals": {
     "save_app_on_update": true
   },
   "pipelines": [
     {
       "application": "app-version-2",
-      "name": "my-pipeline-name",
+      "name": "my-pipeline-trustly",
+      "stages": [
+        {
+          "name": "one",
+          "type": "wait",
+          "waitTime": 10
+        }
+      ]
+    },
+    {
+      "application": "app-version-2",
+      "name": "my-pipeline-carrafa",
       "stages": [
         {
           "name": "one",
