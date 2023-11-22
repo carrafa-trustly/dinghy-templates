@@ -7,7 +7,18 @@
   "pipelines": [
     {
       "application": "app-version-2",
-      "name": "my-pipeline-teste",
+      "name": "my-pipeline-trustly",
+      "stages": [
+        {
+          "name": "one",
+          "type": "wait",
+          "waitTime": 10
+        }
+      ]
+    },
+    {
+      "application": "app-version-2",
+      "name": "my-pipeline-carrafa",
       "stages": [
         {
           "name": "one",
